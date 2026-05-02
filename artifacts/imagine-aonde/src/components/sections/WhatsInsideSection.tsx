@@ -1,51 +1,117 @@
 import { motion } from "framer-motion";
-import { Ticket, Utensils, ShoppingBag, MapIcon, Car, Calendar, Smartphone, Lightbulb, Moon } from "lucide-react";
 
 const features = [
-  { icon: Ticket, title: "Melhores parques Disney", desc: "Estratégias exclusivas para enfrentar filas menores e aproveitar mais.", color: "from-pink-400 to-rose-400", bg: "bg-pink-50", border: "border-pink-100" },
-  { icon: Utensils, title: "Onde comer barato", desc: "Restaurantes imperdíveis e opções econômicas que os guias não contam.", color: "from-orange-400 to-amber-400", bg: "bg-orange-50", border: "border-orange-100" },
-  { icon: ShoppingBag, title: "Outlets que valem a pena", desc: "Onde encontrar os melhores descontos e cupons escondidos.", color: "from-purple-400 to-violet-500", bg: "bg-purple-50", border: "border-purple-100" },
-  { icon: MapIcon, title: "Compras inteligentes", desc: "Lista do que realmente vale a pena comprar e o que levar na mala.", color: "from-sky-400 to-cyan-400", bg: "bg-sky-50", border: "border-sky-100" },
-  { icon: Car, title: "Transporte fácil", desc: "Como se locomover em Orlando sem dor de cabeça (com ou sem carro).", color: "from-teal-400 to-emerald-400", bg: "bg-teal-50", border: "border-teal-100" },
-  { icon: Calendar, title: "Roteiros Prontos", desc: "Planejamento passo a passo para 5, 7 e 10 dias de viagem.", color: "from-indigo-400 to-blue-400", bg: "bg-indigo-50", border: "border-indigo-100" },
-  { icon: Smartphone, title: "Apps úteis", desc: "Os aplicativos que vão salvar sua viagem e ajudar a economizar em dólar.", color: "from-fuchsia-400 to-pink-400", bg: "bg-fuchsia-50", border: "border-fuchsia-100" },
-  { icon: Lightbulb, title: "Dicas secretas", desc: "Macacos de quem conhece Orlando como a palma da mão.", color: "from-yellow-400 to-amber-400", bg: "bg-yellow-50", border: "border-yellow-100" },
-  { icon: Moon, title: "O que fazer à noite", desc: "As melhores opções de entretenimento fora dos parques.", color: "from-violet-400 to-purple-500", bg: "bg-violet-50", border: "border-violet-100" },
+  {
+    emoji: "🏰",
+    title: "Disney sem filas",
+    desc: "Estratégias exclusivas para aproveitar mais e esperar menos. O caminho das pedras que só quem foi muitas vezes conhece.",
+    color: "from-pink-400 to-rose-500",
+    shadow: "hover:shadow-pink-100"
+  },
+  {
+    emoji: "🎢",
+    title: "Universal Studios",
+    desc: "Roteiro completo dos parques, melhores atrações, dicas de Butterbeer e como otimizar seu tempo no Wizarding World.",
+    color: "from-orange-400 to-amber-500",
+    shadow: "hover:shadow-orange-100"
+  },
+  {
+    emoji: "🛍️",
+    title: "Melhores outlets",
+    desc: "Onde encontrar os melhores descontos, cupons escondidos e lojas que valem cada dólar investido.",
+    color: "from-purple-400 to-violet-500",
+    shadow: "hover:shadow-purple-100"
+  },
+  {
+    emoji: "🍽️",
+    title: "Onde comer bem",
+    desc: "Restaurantes imperdíveis, opções econômicas e os lugares que os guias tradicionais nunca contam.",
+    color: "from-red-400 to-orange-400",
+    shadow: "hover:shadow-red-100"
+  },
+  {
+    emoji: "💰",
+    title: "Cupons e economia",
+    desc: "Lista completa de apps, sites e estratégias para economizar centenas de dólares em ingressos e compras.",
+    color: "from-green-400 to-emerald-500",
+    shadow: "hover:shadow-green-100"
+  },
+  {
+    emoji: "📋",
+    title: "Roteiros prontos",
+    desc: "Planejamento passo a passo para 5, 7 e 10 dias — para famílias, casais e grupos de amigos.",
+    color: "from-blue-400 to-indigo-500",
+    shadow: "hover:shadow-blue-100"
+  },
+  {
+    emoji: "🚗",
+    title: "Transporte fácil",
+    desc: "Como se locomover em Orlando sem dor de cabeça, com ou sem carro. Uber, shuttle e mais.",
+    color: "from-teal-400 to-cyan-500",
+    shadow: "hover:shadow-teal-100"
+  },
+  {
+    emoji: "📱",
+    title: "Apps úteis",
+    desc: "Os aplicativos que vão salvar sua viagem e te ajudar a economizar na hora certa.",
+    color: "from-fuchsia-400 to-pink-500",
+    shadow: "hover:shadow-fuchsia-100"
+  },
+  {
+    emoji: "🌙",
+    title: "Lugares escondidos",
+    desc: "Spots secretos, restaurantes fora dos parques e experiências que 99% dos turistas não conhecem.",
+    color: "from-violet-400 to-purple-500",
+    shadow: "hover:shadow-violet-100"
+  },
 ];
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.08 } }
+  visible: { opacity: 1, transition: { staggerChildren: 0.07 } }
 };
+
 const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  hidden: { opacity: 0, y: 28, scale: 0.96 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } }
 };
 
 export function WhatsInsideSection() {
   return (
-    <section id="conteudo" className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(180deg, #fdf2f8 0%, #faf5ff 50%, #f0f9ff 100%)" }}>
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-purple-950 font-serif mb-4"
-          >
-            O que você vai encontrar no guia
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-purple-700/80"
-          >
-            Um material direto ao ponto, sem enrolação, feito para ser lido rápido e consultado durante a viagem.
-          </motion.p>
-        </div>
+    <section
+      id="conteudo"
+      className="py-28 relative overflow-hidden"
+      style={{ background: "linear-gradient(180deg, #fdf2f8 0%, #faf5ff 40%, #f0f5ff 70%, #f0fff8 100%)" }}
+    >
+      {/* Decorative top wave */}
+      <div className="absolute top-0 left-0 right-0 h-24 pointer-events-none"
+        style={{ background: "linear-gradient(180deg, white 0%, transparent 100%)" }} />
 
+      {/* Background dots */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{ backgroundImage: "radial-gradient(#9c27b0 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
+          <p className="text-sm font-semibold tracking-[0.25em] uppercase text-pink-500 mb-3">O que você recebe</p>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#2D2D2D] leading-tight mb-4">
+            Tudo que você precisa para uma{" "}
+            <span className="gradient-text-pink italic">viagem perfeita</span>
+          </h2>
+          <div className="section-divider mb-5"></div>
+          <p className="text-lg text-[#2D2D2D]/65 leading-relaxed font-light">
+            Um material direto ao ponto, sem enrolação, feito para ser lido rápido e consultado durante a viagem.
+          </p>
+        </motion.div>
+
+        {/* Cards grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -53,20 +119,48 @@ export function WhatsInsideSection() {
           viewport={{ once: true, margin: "-80px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
         >
-          {features.map((feature, idx) => (
+          {features.map((f, i) => (
             <motion.div
-              key={idx}
+              key={i}
               variants={itemVariants}
-              className={`bg-white p-6 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 border ${feature.border} flex flex-col items-start text-left group hover:-translate-y-1`}
-              data-testid={`feature-card-${idx}`}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className={`bg-white rounded-3xl p-7 shadow-sm hover:shadow-xl ${f.shadow} transition-all duration-400 border border-white group relative overflow-hidden`}
+              data-testid={`feature-card-${i}`}
             >
-              <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-5 shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                <feature.icon className="w-6 h-6 text-white" />
+              {/* Gradient top strip on hover */}
+              <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${f.color} transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-400`} />
+
+              <div className="flex flex-col gap-4">
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${f.color} flex items-center justify-center text-3xl shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                  {f.emoji}
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-[#2D2D2D] mb-2 group-hover:text-pink-700 transition-colors duration-200">{f.title}</h3>
+                  <p className="text-[#2D2D2D]/55 leading-relaxed text-sm font-light">{f.desc}</p>
+                </div>
               </div>
-              <h3 className="text-lg font-bold text-purple-950 mb-2">{feature.title}</h3>
-              <p className="text-purple-600/80 leading-relaxed text-sm">{feature.desc}</p>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Bottom CTA teaser */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="text-center mt-14"
+        >
+          <p className="text-[#2D2D2D]/50 text-sm font-light mb-4">E muito mais dentro do guia...</p>
+          <motion.button
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })}
+            className="btn-shimmer inline-flex items-center gap-2 font-bold text-base h-12 px-8 rounded-full text-white shadow-lg"
+            style={{ background: "linear-gradient(135deg, #e91e63, #9c27b0)" }}
+          >
+            ✈️ Quero o Guia Completo
+          </motion.button>
         </motion.div>
       </div>
     </section>

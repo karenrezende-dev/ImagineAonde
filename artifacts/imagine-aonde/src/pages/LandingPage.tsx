@@ -1,3 +1,4 @@
+import { CustomCursor } from "@/components/CustomCursor";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { AuthoritySection } from "@/components/sections/AuthoritySection";
 import { WhatsInsideSection } from "@/components/sections/WhatsInsideSection";
@@ -11,7 +12,8 @@ import { WhatsAppButton } from "@/components/sections/WhatsAppButton";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-background font-sans text-foreground selection:bg-primary/30">
+    <div className="min-h-screen bg-white font-sans text-[#2D2D2D] selection:bg-pink-200/50">
+      <CustomCursor />
       <HeroSection />
       <AuthoritySection />
       <WhatsInsideSection />
@@ -20,7 +22,6 @@ export default function LandingPage() {
       <OfferSection />
       <FAQSection />
       <FinalCTASection />
-      
       <StickyCTA />
       <WhatsAppButton />
     </div>
