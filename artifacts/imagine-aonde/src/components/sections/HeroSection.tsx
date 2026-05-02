@@ -175,36 +175,9 @@ export function HeroSection() {
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               className="relative z-10 w-full max-w-[300px] lg:max-w-[340px]"
             >
-              <EbookCover />
+              <EbookCover timeLeft={timeLeft} />
 
-              {/* Countdown floating badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.7, x: 20 }}
-                animate={{ opacity: 1, scale: 1, x: 0 }}
-                transition={{ delay: 1.2, type: "spring", stiffness: 200 }}
-                className="absolute -right-8 -bottom-6 glass rounded-2xl p-4 shadow-2xl border border-pink-100/80 hidden md:block"
-                style={{ boxShadow: "0 12px 40px -8px rgba(233,30,99,0.25)" }}
-              >
-                <div className="flex items-center gap-3 mb-2.5">
-                  <div className="bg-pink-100 p-2 rounded-full">
-                    <Clock className="w-4 h-4 text-pink-600" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold text-purple-900 uppercase tracking-wider">Oferta Expira Em</p>
-                    <p className="text-[10px] text-purple-400">Preço promocional</p>
-                  </div>
-                </div>
-                <div className="flex items-center justify-center gap-1.5 font-bold font-mono text-purple-900 text-lg">
-                  {[fmt(timeLeft.hours), fmt(timeLeft.minutes), fmt(timeLeft.seconds)].map((v, i) => (
-                    <span key={i} className="flex items-center gap-1.5">
-                      <span className="bg-purple-50 rounded-lg px-2.5 py-1 tabular-nums">{v}</span>
-                      {i < 2 && <span className="text-pink-400">:</span>}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Price badge */}
+              {/* Price badge — left side */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.7, x: -20 }}
                 animate={{ opacity: 1, scale: 1, x: 0 }}

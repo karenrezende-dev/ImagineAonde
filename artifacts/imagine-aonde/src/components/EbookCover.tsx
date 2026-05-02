@@ -297,7 +297,17 @@ function CinderellaCastle() {
   );
 }
 
-export function EbookCover() {
+interface TimeLeft {
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
+
+function fmt(n: number) {
+  return n.toString().padStart(2, "0");
+}
+
+export function EbookCover({ timeLeft }: { timeLeft?: TimeLeft }) {
   return (
     <div
       className="w-full rounded-[28px] overflow-hidden flex flex-col relative"
@@ -342,6 +352,69 @@ export function EbookCover() {
           className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
           style={{ background: "linear-gradient(0deg, rgba(139,26,107,0.95) 0%, transparent 100%)" }}
         />
+
+        {/* Countdown overlay — centered on the castle */}
+        {timeLeft && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="absolute left-1/2 -translate-x-1/2"
+            style={{ bottom: "15%", width: "78%", zIndex: 40 }}
+          >
+            <div
+              className="rounded-2xl px-3 py-2.5 flex flex-col items-center gap-1.5"
+              style={{
+                background: "rgba(8, 3, 28, 0.78)",
+                backdropFilter: "blur(14px)",
+                border: "1px solid rgba(244,114,182,0.4)",
+                boxShadow: "0 6px 28px rgba(168,85,247,0.4), inset 0 1px 0 rgba(255,255,255,0.07)",
+              }}
+            >
+              {/* Label row */}
+              <div className="flex items-center gap-1.5">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#f472b6" strokeWidth="2.5" strokeLinecap="round">
+                  <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                </svg>
+                <span
+                  className="font-bold tracking-[0.22em] uppercase"
+                  style={{ fontSize: "7.5px", color: "rgba(255,255,255,0.78)" }}
+                >
+                  Oferta expira em
+                </span>
+              </div>
+
+              {/* Timer digits */}
+              <div className="flex items-center gap-1">
+                {[
+                  { val: fmt(timeLeft.hours), label: "h" },
+                  { val: fmt(timeLeft.minutes), label: "m" },
+                  { val: fmt(timeLeft.seconds), label: "s" },
+                ].map((unit, i) => (
+                  <span key={i} className="flex items-center gap-1">
+                    <span
+                      className="rounded-lg tabular-nums font-mono font-bold leading-none"
+                      style={{
+                        fontSize: "15px",
+                        padding: "4px 7px",
+                        background: "rgba(244,114,182,0.15)",
+                        border: "1px solid rgba(244,114,182,0.35)",
+                        color: "#fda4c0",
+                        textShadow: "0 0 12px rgba(244,114,182,0.7)",
+                      }}
+                    >
+                      {unit.val}
+                      <span style={{ fontSize: "7px", marginLeft: "2px", opacity: 0.6 }}>{unit.label}</span>
+                    </span>
+                    {i < 2 && (
+                      <span style={{ color: "#f472b6", fontSize: "13px", fontWeight: "bold", opacity: 0.7 }}>:</span>
+                    )}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
       </div>
 
       {/* CONTENT BELOW */}
