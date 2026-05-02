@@ -1,0 +1,193 @@
+```md
+Crie uma landing page premium, moderna e altamente persuasiva para vender um eBook digital de viagem para Orlando, Disney e compras nos outlets, da agência **Imagine Aonde**.
+
+## Objetivo:
+Converter visitantes em compradores do eBook com dicas práticas e exclusivas sobre Orlando.
+
+## Marca:
+Imagine Aonde
+
+## Público-Alvo:
+- Pessoas planejando viagem para Orlando
+- Famílias indo para Disney
+- Casais em lua de mel
+- Viajantes de primeira viagem
+- Pessoas buscando economizar
+- Brasileiros que querem roteiro pronto
+
+## Produto:
+eBook digital com dicas completas de Orlando
+
+## Conteúdo do eBook:
+- Dicas da Disney
+- Universal Studios
+- Melhores outlets
+- Compras baratas
+- Restaurantes imperdíveis
+- Roteiros prontos
+- Apps úteis
+- Como economizar em dólar
+- Transporte em Orlando
+- O que fazer à noite
+- Dicas secretas de quem conhece Orlando
+
+## Estilo Visual:
+- Premium
+- Moderno
+- Turístico
+- Elegante
+- Inspirador
+- Cores principais:
+  - Azul Disney (#1e40af)
+  - Roxo mágico (#7c3aed)
+  - Branco
+  - Dourado suave
+- Elementos visuais:
+  - Castelo
+  - Parque temático
+  - Mala de viagem
+  - Compras
+  - Mapa
+  - Passaporte
+
+## Estrutura da Landing Page:
+
+### 1. Hero Section
+
+Headline forte:
+
+# Descubra Orlando Como Quem Já Foi Muitas Vezes
+
+Subheadline:
+
+O guia definitivo da Imagine Aonde com dicas reais de Disney, outlets, restaurantes e roteiros para você economizar tempo e dinheiro.
+
+Botões CTA:
+- Quero Meu Guia Agora
+- Ver o Que Tem Dentro
+
+Imagem:
+Mockup 3D do eBook + celular + passaporte + malas
+
+---
+
+### 2. Autoridade
+
+Texto:
+
+Criado pela Imagine Aonde, perfil especializado em viagens com dicas reais e experiências para brasileiros viajarem melhor.
+
+Mostrar:
+- Instagram forte
+- Conteúdo real
+- Experiência prática
+
+---
+
+### 3. O Que Você Vai Encontrar
+
+Cards modernos com ícones:
+
+- Melhores parques Disney
+- Estratégia para filas menores
+- Onde comer barato
+- Outlets que valem a pena
+- Cupons e descontos
+- Compras inteligentes
+- Transporte fácil
+- Roteiros de 5, 7 e 10 dias
+- Dicas secretas
+
+---
+
+### 4. Benefícios
+
+Headline:
+
+Planeje melhor e gaste menos
+
+Lista:
+
+- Evite erros de primeira viagem
+- Economize centenas de dólares
+- Aproveite mais tempo nos parques
+- Saiba onde comprar barato
+- Monte roteiro perfeito
+- Viaje com segurança
+
+---
+
+### 5. Prova Social
+
+Cards com depoimentos:
+
+- Economizei muito
+- Melhor compra antes da viagem
+- Me salvou nos outlets
+- Disney ficou muito mais fácil
+
+---
+
+### 6. Oferta
+
+Preço antigo:
+R$97
+
+Preço atual:
+R$29,90
+
+Botão gigante:
+QUERO MEU EBOOK
+
+Garantia:
+7 dias
+
+Acesso imediato após pagamento.
+
+---
+
+### 7. FAQ
+
+- Recebo na hora?
+- Serve para primeira viagem?
+- Posso usar no celular?
+- Tem roteiro infantil?
+- Vale para casal?
+- Tem garantia?
+
+---
+
+### 8. CTA Final
+
+Headline:
+
+Sua viagem começa antes do embarque.
+
+Subheadline:
+
+Tenha Orlando na palma da mão.
+
+Botão pulsante:
+Comprar Agora
+
+---
+
+## Extras Importantes:
+
+- Layout ultra profissional
+- Responsivo mobile first
+- SEO otimizado
+- Carregamento rápido
+- Scroll animations
+- Sticky CTA no mobile
+- Contador de oferta
+- Integração WhatsApp
+- Integração checkout Hotmart/Kiwify
+- Captura de leads
+
+## Tecnologias:
+Next.js + TailwindCSS + Framer Motion
+
+## Tom de escrita:
+Empolgante, confiável, especialista em viagem e desejo de férias.
+```

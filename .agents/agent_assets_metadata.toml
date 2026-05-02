@@ -1,0 +1,14 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "Orkw8Lice1s7qRduxyQYY"
+uri = "file://artifacts/imagine-aonde/public/hero-bg.png"
+type = "image"
+title = "Disney magic castle hero"
+
+[[generated]]
+id = "DcsHBOXKUSPkFUFR95WVm"
+uri = "file://artifacts/imagine-aonde/public/ebook-mockup.png"
+type = "image"
+title = "Orlando eBook mockup"
