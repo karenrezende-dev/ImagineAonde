@@ -18,24 +18,34 @@ export function AboutSection() {
             <div className="relative">
               {/* Main photo slot */}
               <div
-                className="photo-slot w-64 h-80 rounded-3xl text-center"
+                className="photo-slot rounded-3xl flex flex-col items-center justify-center text-center gap-3"
                 style={{ width: "260px", height: "320px" }}
               >
-                <Camera className="w-10 h-10 opacity-50" />
-                <p className="text-sm font-medium opacity-70 px-6">Adicione sua foto aqui</p>
-                <p className="text-xs opacity-50 px-6">(substitua este espaço pela sua foto)</p>
+                <div
+                  className="w-14 h-14 rounded-full flex items-center justify-center"
+                  style={{ background: "rgba(196,181,253,0.2)" }}
+                >
+                  <Camera className="w-7 h-7" style={{ color: "#A78BFA" }} />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold" style={{ color: "#A855F7" }}>Sua foto aqui</p>
+                  <p className="text-xs text-purple-300 px-6 mt-1">Substitua por uma foto sua em Orlando 🏰</p>
+                </div>
               </div>
-              {/* Decorative badge */}
+
+              {/* Location badge */}
               <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl px-4 py-3 shadow-lg border border-pink-100 flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-pink-500" />
                 <div>
                   <p className="text-xs font-bold text-gray-800">Orlando, EUA</p>
-                  <p className="text-[10px] text-gray-400">já visitei 8x ✈️</p>
+                  <p className="text-[10px] text-gray-400">já visitei mais de 5x ✈️</p>
                 </div>
               </div>
-              {/* Floating heart */}
-              <div className="absolute -top-4 -left-4 w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center">
-                <Heart className="w-5 h-5 text-pink-500 fill-pink-500" />
+
+              {/* Heart badge */}
+              <div className="absolute -top-4 -left-4 w-11 h-11 rounded-full flex items-center justify-center shadow-md"
+                style={{ background: "linear-gradient(135deg, #FCE7F3, #EDE9FE)" }}>
+                <Heart className="w-5 h-5 fill-pink-400 text-pink-400" />
               </div>
             </div>
           </motion.div>
@@ -52,30 +62,42 @@ export function AboutSection() {
               <span className="text-sm font-semibold text-pink-500 tracking-widest uppercase">Quem sou eu</span>
               <h2 className="mt-3 text-3xl md:text-4xl font-serif font-bold leading-tight" style={{ color: "#1F1F1F" }}>
                 Olá, eu sou{" "}
-                <span className="gradient-text-pink italic">sua nome aqui</span> 👋
+                <span className="gradient-text-pink italic">seu nome aqui</span> 👋
               </h2>
             </div>
 
             <p className="text-gray-500 leading-relaxed">
-              Sou apaixonada por viagens e já estive em Orlando mais de 8 vezes. Cada visita me ensinou algo novo — um restaurante escondido, um atalho nos parques, uma promoção que a maioria não conhece.
+              {/* ✏️ Substitua este texto pela sua história */}
+              Escreva aqui sobre você — como surgiu seu amor por Orlando, quantas vezes foi, o que te levou a criar este guia. Seja autêntica e conecte-se com quem vai ler!
             </p>
+
             <p className="text-gray-500 leading-relaxed">
-              Criei este guia para compartilhar tudo o que aprendi ao longo dos anos, com informações atualizadas e dicas reais de quem vive e respira Orlando.
+              {/* ✏️ Continue sua história aqui */}
+              Adicione mais um parágrafo contando sua missão: ajudar brasileiras a viver a melhor viagem possível a Orlando, sem desperdício de tempo ou dinheiro.
             </p>
 
             <div className="grid grid-cols-2 gap-3 mt-2">
               {[
-                { emoji: "✈️", label: "+8 viagens a Orlando" },
+                { emoji: "✈️", label: "+5 viagens a Orlando" },
                 { emoji: "📖", label: "Guia sempre atualizado" },
                 { emoji: "💬", label: "Suporte exclusivo" },
                 { emoji: "🏰", label: "Disney, Universal e mais" },
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-2.5 bg-gray-50 rounded-xl px-3 py-2.5 border border-gray-100">
+                <div
+                  key={i}
+                  className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 border border-gray-100"
+                  style={{ background: "#FAFAFA" }}
+                >
                   <span className="text-lg">{item.emoji}</span>
                   <span className="text-sm font-medium text-gray-700">{item.label}</span>
                 </div>
               ))}
             </div>
+
+            {/* Edit hint */}
+            <p className="text-xs text-purple-300 italic mt-1">
+              ✏️ Personalize este bloco com seu nome, história e número de viagens
+            </p>
           </motion.div>
         </div>
       </div>
