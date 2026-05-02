@@ -4,140 +4,112 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    q: "Recebo o guia na hora?",
-    a: "Sim! Assim que o pagamento for aprovado (Pix ou Cartão é instantâneo), você receberá o link para baixar o e-book no seu e-mail em segundos.",
-    emoji: "⚡"
+    q: "Para quem é esse guia?",
+    a: "Para qualquer brasileiro que queira viajar a Orlando — seja pela primeira vez ou para quem já foi e quer aproveitar ainda mais. O guia é em português e pensado para a realidade de quem vem do Brasil.",
   },
   {
-    q: "Serve para quem está indo pela primeira vez?",
-    a: "Com certeza! O guia foi criado exatamente para pegar na sua mão e evitar os erros clássicos de quem vai pela primeira vez, explicando tudo do zero de forma bem didática.",
-    emoji: "🙋"
+    q: "O guia inclui Disney, Universal e SeaWorld?",
+    a: "Sim! O guia cobre Disney World (Magic Kingdom, EPCOT, Hollywood Studios, Animal Kingdom), Universal Orlando (incluindo Epic Universe), SeaWorld Orlando e toda a cidade de Orlando — outlets, restaurantes, transporte e muito mais.",
   },
   {
-    q: "Posso usar no celular durante a viagem?",
-    a: "Sim, o arquivo é em formato PDF otimizado, ideal para ler no celular, tablet ou computador. Você pode baixar e consultar offline durante toda a viagem.",
-    emoji: "📱"
+    q: "Por quanto tempo tenho acesso?",
+    a: "Você tem acesso completo por 1 ano a partir da data da compra. Durante esse período, pode acessar quantas vezes quiser e também receberá todas as atualizações do guia.",
   },
   {
-    q: "Tem roteiro para quem viaja com crianças?",
-    a: "Sim! Os roteiros prontos possuem indicações e adaptações para quem viaja com crianças pequenas, idosos ou apenas adultos. Tem opção para todos os perfis.",
-    emoji: "👨‍👩‍👧‍👦"
+    q: "O guia é atualizado com frequência?",
+    a: "Sim! O guia é atualizado constantemente com novas informações, mudanças nos parques, novos preços e dicas. Você sempre terá a versão mais recente durante seu período de acesso.",
   },
   {
-    q: "Vale para casal sem filhos?",
-    a: "Totalmente. Destacamos restaurantes românticos, atrações mais radicais, dicas de vida noturna e experiências exclusivas perfeitas para casais.",
-    emoji: "💑"
+    q: "Como funciona o suporte exclusivo?",
+    a: "Após a compra, você terá acesso ao suporte exclusivo para tirar dúvidas sobre sua viagem. Pode perguntar sobre roteiros, atrações, restaurantes ou qualquer dúvida que surgir.",
   },
   {
-    q: "Tem garantia de devolução?",
-    a: "Sim. Você tem 7 dias de garantia incondicional. Se comprar, ler e achar que não te ajudou em nada, basta enviar um e-mail que devolvemos 100% do seu dinheiro. Sem perguntas.",
-    emoji: "🛡️"
+    q: "Tem garantia?",
+    a: "Sim! Se por qualquer motivo você não ficar satisfeita, basta pedir o reembolso em até 7 dias após a compra. Sem perguntas e sem burocracia.",
+  },
+  {
+    q: "Como acesso o guia após a compra?",
+    a: "O acesso é imediato! Assim que a compra for confirmada, você receberá o link de acesso no seu e-mail. Disponível 24 horas por dia, de qualquer dispositivo.",
   },
 ];
 
-function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.07 }}
-      className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
-        open
-          ? "border-pink-200 bg-gradient-to-br from-pink-50/80 to-purple-50/50 shadow-md"
-          : "border-[#2D2D2D]/10 bg-white hover:border-pink-200 hover:shadow-sm"
-      }`}
-      data-testid={`faq-item-${index}`}
-    >
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
-      >
-        <div className="flex items-center gap-3">
-          <span className="text-xl">{faq.emoji}</span>
-          <span className={`font-semibold text-base transition-colors ${open ? "text-pink-700" : "text-[#2D2D2D]"}`}>
-            {faq.q}
-          </span>
-        </div>
-        <motion.div
-          animate={{ rotate: open ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
-          className="flex-shrink-0"
-        >
-          <ChevronDown className={`w-5 h-5 transition-colors ${open ? "text-pink-500" : "text-[#2D2D2D]/40"}`} />
-        </motion.div>
-      </button>
-
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <div className="px-6 pb-6 pl-16">
-              <p className="text-[#2D2D2D]/70 leading-relaxed font-light">{faq.a}</p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
-  );
-}
-
 export function FAQSection() {
-  return (
-    <section className="py-28 bg-white relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none opacity-40"
-        style={{ background: "radial-gradient(ellipse at 80% 50%, rgba(243,229,245,0.7) 0%, transparent 60%)" }} />
+  const [open, setOpen] = useState<number | null>(null);
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Header */}
+  return (
+    <section className="py-20 section-soft">
+      <div className="container mx-auto px-4 md:px-8 max-w-3xl">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7 }}
-          className="text-center max-w-3xl mx-auto mb-14"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
         >
-          <p className="text-sm font-semibold tracking-[0.25em] uppercase text-pink-500 mb-3">Tire suas dúvidas</p>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#2D2D2D] leading-tight mb-4">
-            Perguntas{" "}
-            <span className="gradient-text-pink italic">Frequentes</span>
+          <span className="text-sm font-semibold text-purple-500 tracking-widest uppercase">Dúvidas frequentes</span>
+          <h2 className="mt-3 text-4xl md:text-5xl font-serif font-bold" style={{ color: "#1F1F1F" }}>
+            Ainda com dúvidas?
           </h2>
-          <div className="section-divider mb-5"></div>
-          <p className="text-lg text-[#2D2D2D]/60 font-light">
-            Tudo o que você precisa saber antes de comprar.
-          </p>
         </motion.div>
 
-        <div className="max-w-3xl mx-auto space-y-3">
+        <div className="space-y-3">
           {faqs.map((faq, i) => (
-            <FAQItem key={i} faq={faq} index={i} />
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.06, duration: 0.4 }}
+              className="card-clean overflow-hidden"
+            >
+              <button
+                onClick={() => setOpen(open === i ? null : i)}
+                className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+              >
+                <span className="font-medium text-gray-800 text-sm leading-snug">{faq.q}</span>
+                <motion.div
+                  animate={{ rotate: open === i ? 180 : 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="shrink-0"
+                >
+                  <ChevronDown className="w-4 h-4 text-purple-400" />
+                </motion.div>
+              </button>
+              <AnimatePresence>
+                {open === i && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.25 }}
+                    className="overflow-hidden"
+                  >
+                    <p className="px-6 pb-5 text-sm text-gray-500 leading-relaxed border-t border-gray-50 pt-3">
+                      {faq.a}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
         </div>
 
-        {/* Still have questions */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="text-center mt-12"
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="mt-10 text-center"
         >
-          <p className="text-[#2D2D2D]/55 mb-4">Ainda tem dúvidas? Fale com a gente.</p>
-          <a
-            href="https://wa.me/5511999999999"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-semibold text-sm text-white px-6 py-3 rounded-full shadow-md hover:scale-105 transition-transform"
-            style={{ background: "#25D366" }}
+          <p className="text-gray-500 text-sm mb-4">Ainda tem dúvidas? Fale comigo no WhatsApp!</p>
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })}
+            className="btn-primary px-8 py-3.5 text-sm inline-flex items-center gap-2"
           >
-            💬 Chamar no WhatsApp
-          </a>
+            ✈️ Quero meu guia — R$ 29,90
+          </motion.button>
         </motion.div>
       </div>
     </section>
