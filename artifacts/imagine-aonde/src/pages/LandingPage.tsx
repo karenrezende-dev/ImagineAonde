@@ -1,4 +1,5 @@
 import { CustomCursor } from "@/components/CustomCursor";
+import { UrgencyBar } from "@/components/sections/UrgencyBar";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { AuthoritySection } from "@/components/sections/AuthoritySection";
 import { WhatsInsideSection } from "@/components/sections/WhatsInsideSection";
@@ -15,6 +16,8 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-white font-sans text-[#2D2D2D] selection:bg-pink-200/50">
       <CustomCursor />
+      <UrgencyBar />
+      <div className="pt-[42px]">
       <HeroSection />
       <AuthoritySection />
       <WhatsInsideSection />
@@ -26,6 +29,7 @@ export default function LandingPage() {
       <FinalCTASection />
       <StickyCTA />
       <WhatsAppButton />
+      </div>
     </div>
   );
 }
