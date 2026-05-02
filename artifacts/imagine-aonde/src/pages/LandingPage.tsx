@@ -2,6 +2,7 @@ import { CustomCursor } from "@/components/CustomCursor";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { AuthoritySection } from "@/components/sections/AuthoritySection";
 import { WhatsInsideSection } from "@/components/sections/WhatsInsideSection";
+import { BookPreviewSection } from "@/components/sections/BookPreviewSection";
 import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { SocialProofSection } from "@/components/sections/SocialProofSection";
 import { OfferSection } from "@/components/sections/OfferSection";
@@ -17,6 +18,7 @@ export default function LandingPage() {
       <HeroSection />
       <AuthoritySection />
       <WhatsInsideSection />
+      <BookPreviewSection />
       <BenefitsSection />
       <SocialProofSection />
       <OfferSection />
