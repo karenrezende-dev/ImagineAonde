@@ -7,14 +7,8 @@ export function StickyCTA() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show after scrolling past hero section (approx 100vh)
-      if (window.scrollY > window.innerHeight * 0.8) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      setIsVisible(window.scrollY > window.innerHeight * 0.8);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -27,15 +21,17 @@ export function StickyCTA() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 shadow-[0_-10px_40px_-10px_rgba(0,0,0,0.1)] p-4 md:hidden flex items-center justify-between"
+          className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-pink-200 shadow-[0_-8px_32px_-8px_rgba(206,147,216,0.3)] p-4 md:hidden flex items-center justify-between"
         >
           <div className="flex flex-col">
-            <span className="text-xs text-gray-500 line-through">R$ 97,00</span>
-            <span className="text-xl font-bold text-primary leading-none">R$ 29,90</span>
+            <span className="text-xs text-gray-400 line-through">R$ 97,00</span>
+            <span className="text-xl font-bold text-pink-600 leading-none">R$ 29,90</span>
           </div>
-          <Button 
-            className="bg-accent hover:bg-accent/90 text-white font-bold animate-pulse"
+          <Button
+            className="font-bold text-white rounded-full"
+            style={{ background: "linear-gradient(135deg, #e91e63, #9c27b0)" }}
             onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })}
+            data-testid="button-sticky-cta"
           >
             Quero Agora
           </Button>
