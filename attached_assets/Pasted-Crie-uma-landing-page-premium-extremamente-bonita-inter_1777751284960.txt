@@ -1,0 +1,277 @@
+Crie uma landing page premium, extremamente bonita, interativa e altamente persuasiva para vender um eBook digital com dicas de Orlando, Disney, outlets e experiências exclusivas da marca **Imagine Aonde**.
+
+## Objetivo:
+Converter visitantes em compradores através de um site visualmente encantador, moderno e emocional, com aparência premium e experiência memorável.
+
+## Referência Visual:
+Inspirar-se no estilo visual elegante, criativo e envolvente do site:
+https://www.seliganamagia.com.br/guia-magico
+
+**Não copiar conteúdo**, apenas usar como referência de:
+- estética refinada
+- tipografia diferenciada
+- seções fluidas
+- animações suaves
+- layout criativo
+- visual impactante
+- storytelling visual
+- atmosfera encantadora
+
+---
+
+# Identidade da Marca
+
+## Nome:
+Imagine Aonde
+
+## Posicionamento:
+Marca moderna de viagens que inspira pessoas a viver experiências incríveis pelo mundo.
+
+## Público:
+- Famílias indo para Disney
+- Casais
+- Primeira viagem para Orlando
+- Brasileiros que querem economizar
+- Pessoas que amam viajar
+- Seguidores do Instagram da marca
+
+---
+
+# Estilo Visual Desejado
+
+## Paleta Pastel Premium:
+
+- Rosa pastel #F8D7DA
+- Lilás claro #DCC6FF
+- Azul bebê #CFE8FF
+- Verde menta #D8F3DC
+- Creme #FFF8F0
+- Branco gelo #FFFFFF
+- Texto escuro elegante #2D2D2D
+
+## Sensação Visual:
+- leveza
+- sonho
+- férias mágicas
+- elegante
+- moderno
+- acolhedor
+- instagramável
+- sofisticado
+
+---
+
+# Tipografia Premium (IMPORTANTE)
+
+Use combinação de fontes elegantes e modernas:
+
+## Títulos:
+- Playfair Display
+ou
+- Cormorant Garamond
+ou
+- Cinzel Decorative
+
+## Textos:
+- Poppins
+ou
+- Inter
+ou
+- Montserrat
+
+## Botões:
+- Semi bold moderno
+
+---
+
+# Experiência Interativa (OBRIGATÓRIO)
+
+Criar site com alto nível visual e interação:
+
+- Scroll animations suaves
+- Parallax leve
+- Elementos flutuando lentamente
+- Hover elegante nos cards
+- Botões com brilho ao passar mouse
+- Micro animações
+- Transições suaves
+- Seções aparecendo conforme scroll
+- Cursor elegante customizado
+- Background animado sutil
+- Gradientes vivos suaves
+- Sticky CTA mobile
+- Efeito glassmorphism leve
+- Motion design premium
+
+---
+
+# Estrutura da Landing Page
+
+## 1. Hero Section Cinemática
+
+Imagem de fundo estilizada:
+Orlando + castelo + mala + mapa + céu pastel.
+
+Headline grande:
+
+# Descubra Orlando Como Quem Já Sabe Todos os Segredos
+
+Subheadline:
+
+O guia definitivo da Imagine Aonde com roteiros, Disney, outlets, restaurantes e dicas reais para economizar e aproveitar muito mais.
+
+Botões:
+- Quero Meu Guia
+- Ver Detalhes
+
+Adicionar mockup 3D do eBook flutuando.
+
+---
+
+## 2. Seção Autoridade
+
+Bloco elegante mostrando:
+
+- Instagram Imagine Aonde
+- Conteúdo real
+- Experiência em viagens
+- Dicas verdadeiras
+
+Adicionar números animados:
++ seguidores
++ viajantes ajudados
++ dicas publicadas
+
+---
+
+## 3. O Que Tem no eBook
+
+Criar cards lindos com ícones animados:
+
+- Disney sem filas
+- Universal Studios
+- Melhores outlets
+- Onde comer bem
+- Cupons e economia
+- Roteiros prontos
+- Transporte fácil
+- Apps úteis
+- Lugares escondidos
+
+---
+
+## 4. Benefícios Emocionais
+
+Headline:
+
+# Viaje Mais Leve, Gaste Menos e Aproveite Mais
+
+Cards:
+
+- Evite erros caros
+- Economize tempo
+- Planejamento fácil
+- Mais diversão
+- Menos estresse
+- Experiência completa
+
+---
+
+## 5. Prova Social
+
+Criar carrossel bonito com depoimentos reais simulados.
+
+Visual estilo Instagram.
+
+---
+
+## 6. Oferta Premium
+
+Caixa destaque glassmorphism:
+
+De R$97,00  
+Por apenas R$29,90
+
+Botão enorme:
+
+QUERO AGORA ✈️
+
+Garantia de 7 dias.
+
+Countdown animado.
+
+---
+
+## 7. FAQ Interativo
+
+Accordion animado:
+
+- Recebo na hora?
+- Serve primeira viagem?
+- Posso usar celular?
+- Tem garantia?
+- Vale para casal?
+- Vale com crianças?
+
+---
+
+## 8. CTA Final Emocional
+
+Imagem bonita de Orlando ao fundo.
+
+Headline:
+
+# Sua viagem começa antes do embarque
+
+Texto:
+
+Tenha Orlando na palma da sua mão.
+
+Botão pulsante:
+Comprar Agora
+
+---
+
+# Extras de Design
+
+- Responsivo impecável
+- Mobile first
+- SEO avançado
+- Performance alta
+- Loading bonito
+- Ilustrações suaves
+- Ícones personalizados
+- Espaçamento premium
+- Sombras leves
+- Bordas arredondadas modernas
+
+---
+
+# Tecnologias
+
+Next.js 15  
+TailwindCSS  
+Framer Motion  
+GSAP (animações premium)  
+Swiper.js (carrossel)
+
+---
+
+# Tom de Copywriting
+
+Misturar:
+
+- desejo de viajar
+- praticidade
+- autoridade
+- economia
+- encantamento
+- urgência elegante
+
+---
+
+# Resultado Final Esperado
+
+Um site que a pessoa entre e pense:
+
+"Caramba, isso está lindo. Quero viajar agora e preciso desse guia."
