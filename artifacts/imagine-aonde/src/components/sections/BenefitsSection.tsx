@@ -37,7 +37,7 @@ export function BenefitsSection() {
             <div className="relative aspect-square max-w-md mx-auto">
               <div className="absolute inset-0 rounded-full blur-3xl transform -translate-x-6 translate-y-6 opacity-50" style={{ background: "linear-gradient(135deg, rgba(206,147,216,0.4), rgba(129,212,250,0.4))" }} />
               <img
-                src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=2070&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=2070&auto=format&fit=crop"
                 alt="Sacolas de marcas famosas dos outlets de Orlando"
                 className="rounded-3xl object-cover w-full h-full shadow-2xl relative z-10"
               />

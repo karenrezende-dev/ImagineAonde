@@ -120,11 +120,51 @@ export function HeroSection() {
           >
             <div className="relative aspect-[3/4] w-full max-w-[360px] mx-auto z-10">
               <div className="absolute inset-0 rounded-3xl blur-3xl -z-10 animate-pulse opacity-60" style={{ background: "linear-gradient(135deg, rgba(206,147,216,0.5), rgba(129,212,250,0.5))", animationDuration: "4s" }} />
-              <img
-                src="/ebook-mockup.png"
-                alt="Guia Completo de Orlando"
-                className="w-full h-full object-contain filter drop-shadow-2xl"
-              />
+
+              {/* eBook cover — white bg, gold & pink */}
+              <div className="w-full h-full rounded-2xl flex flex-col items-center justify-between overflow-hidden filter drop-shadow-2xl"
+                style={{ background: "#ffffff", border: "2px solid #f9e4b7", boxShadow: "0 32px 80px -12px rgba(180,120,60,0.25), 0 8px 32px -4px rgba(233,30,99,0.15)" }}
+              >
+                {/* Top gold band */}
+                <div className="w-full py-3 flex items-center justify-center"
+                  style={{ background: "linear-gradient(135deg, #c9a227, #f0c93a, #c9a227)" }}
+                >
+                  <span className="text-white text-[10px] font-bold tracking-[0.3em] uppercase drop-shadow">✦ Imagine Aonde ✦</span>
+                </div>
+
+                {/* Main content */}
+                <div className="flex flex-col items-center justify-center flex-1 px-6 text-center gap-3">
+                  <p className="text-[11px] font-semibold tracking-[0.25em] uppercase" style={{ color: "#c9a227" }}>Guia Completo de</p>
+
+                  <h2 className="font-bold leading-none" style={{ fontSize: "clamp(2.8rem,10vw,3.8rem)", background: "linear-gradient(135deg, #b8860b, #f0c93a, #b8860b)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                    ORLANDO
+                  </h2>
+
+                  {/* Decorative divider */}
+                  <div className="flex items-center gap-2 w-full justify-center">
+                    <div className="h-px flex-1" style={{ background: "linear-gradient(to right, transparent, #c9a227)" }} />
+                    <span style={{ color: "#e91e63" }}>✦</span>
+                    <div className="h-px flex-1" style={{ background: "linear-gradient(to left, transparent, #c9a227)" }} />
+                  </div>
+
+                  {/* Icons row */}
+                  <div className="flex gap-4 text-2xl my-1">
+                    <span>🏰</span><span>🛍️</span><span>🎢</span>
+                  </div>
+
+                  <p className="text-[10px] font-medium leading-snug max-w-[160px]" style={{ color: "#9c27b0" }}>
+                    Disney · Outlets · Restaurantes · Roteiros
+                  </p>
+                </div>
+
+                {/* Bottom pink band */}
+                <div className="w-full py-3 flex flex-col items-center gap-0.5"
+                  style={{ background: "linear-gradient(135deg, #e91e63, #f06292)" }}
+                >
+                  <span className="text-white text-[9px] font-bold tracking-[0.2em] uppercase opacity-90">Sua viagem mágica</span>
+                  <span className="text-white text-[9px] font-bold tracking-[0.2em] uppercase opacity-90">começa aqui ✨</span>
+                </div>
+              </div>
 
               {/* Countdown badge */}
               <motion.div
