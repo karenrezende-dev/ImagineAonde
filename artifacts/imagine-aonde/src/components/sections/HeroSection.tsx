@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Clock, Sparkles, Star, ChevronDown } from "lucide-react";
+import { EbookCover } from "@/components/EbookCover";
 
 export function HeroSection() {
   const [timeLeft, setTimeLeft] = useState({ hours: 23, minutes: 59, seconds: 59 });
@@ -33,7 +34,7 @@ export function HeroSection() {
         <img
           src="/hero-bg.png"
           alt="Orlando"
-          className="w-full h-full object-cover object-center opacity-[0.08]"
+          className="w-full h-full object-cover object-center opacity-[0.06]"
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(255,240,245,0.6) 0%, transparent 50%, rgba(240,245,255,0.7) 100%)" }} />
       </div>
@@ -151,78 +152,30 @@ export function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Right: eBook mockup */}
+          {/* Right: eBook mockup — new castle cover */}
           <motion.div
             initial={{ opacity: 0, x: 40, rotateY: -15 }}
             animate={{ opacity: 1, x: 0, rotateY: 0 }}
             transition={{ delay: 0.4, duration: 1, ease: [0.22, 1, 0.36, 1] }}
             className="relative flex items-center justify-center lg:justify-end"
-            style={{ perspective: "1000px" }}
+            style={{ perspective: "1200px" }}
           >
-            {/* Glow */}
-            <div className="absolute inset-0 rounded-full blur-3xl opacity-40 animate-pulse"
-              style={{ background: "radial-gradient(circle, rgba(206,147,216,0.6) 0%, rgba(129,212,250,0.4) 60%, transparent 80%)", animationDuration: "5s" }} />
+            {/* Magical glow behind the book */}
+            <div
+              className="absolute inset-0 rounded-full blur-3xl opacity-50 animate-pulse"
+              style={{
+                background: "radial-gradient(circle, rgba(168,85,247,0.5) 0%, rgba(236,72,153,0.35) 40%, rgba(59,130,246,0.2) 70%, transparent 90%)",
+                animationDuration: "4s",
+              }}
+            />
 
-            {/* eBook */}
+            {/* Floating book */}
             <motion.div
-              animate={{ y: [-12, 0, -12], rotateZ: [-1, 1, -1] }}
+              animate={{ y: [-14, 0, -14], rotateZ: [-1.5, 1.5, -1.5] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               className="relative z-10 w-full max-w-[300px] lg:max-w-[340px]"
-              style={{ filter: "drop-shadow(0 40px 80px rgba(180,100,120,0.3))" }}
             >
-              <div
-                className="w-full rounded-3xl overflow-hidden flex flex-col"
-                style={{
-                  background: "linear-gradient(160deg, #ffffff 0%, #fff8f5 100%)",
-                  border: "1.5px solid #f9e4b7",
-                  boxShadow: "0 40px 100px -20px rgba(180,80,100,0.25), inset 0 1px 0 rgba(255,255,255,0.9)",
-                  aspectRatio: "3/4"
-                }}
-              >
-                {/* Top gold band */}
-                <div className="py-3 px-4 flex items-center justify-center gap-2 shrink-0"
-                  style={{ background: "linear-gradient(135deg, #b8860b 0%, #f0c93a 50%, #b8860b 100%)" }}>
-                  <span className="text-white text-[9px] font-bold tracking-[0.35em] uppercase drop-shadow">✦ IMAGINE AONDE ✦</span>
-                </div>
-
-                {/* Cover image */}
-                <div className="relative flex-1 overflow-hidden">
-                  <img
-                    src="/hero-bg.png"
-                    alt="Orlando"
-                    className="w-full h-full object-cover object-top opacity-30"
-                  />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 gap-3"
-                    style={{ background: "linear-gradient(180deg, rgba(255,248,240,0.92) 0%, rgba(255,240,248,0.88) 100%)" }}>
-                    <p className="text-[10px] font-bold tracking-[0.3em] uppercase" style={{ color: "#c9a227" }}>Guia Completo de</p>
-
-                    <h2 className="font-serif font-bold leading-none"
-                      style={{ fontSize: "clamp(3rem,10vw,4.2rem)", background: "linear-gradient(135deg, #b8860b, #f0c93a, #c9a227)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                      ORLANDO
-                    </h2>
-
-                    <div className="flex items-center gap-2 w-full justify-center my-1">
-                      <div className="h-px flex-1" style={{ background: "linear-gradient(to right, transparent, #c9a227)" }} />
-                      <span style={{ color: "#e91e63", fontSize: 12 }}>✦</span>
-                      <div className="h-px flex-1" style={{ background: "linear-gradient(to left, transparent, #c9a227)" }} />
-                    </div>
-
-                    <div className="flex gap-5 text-3xl my-1">
-                      <span>🏰</span><span>🛍️</span><span>🎢</span>
-                    </div>
-
-                    <p className="text-[11px] font-medium leading-snug max-w-[160px] text-purple-700">
-                      Disney · Outlets · Restaurantes · Roteiros
-                    </p>
-                  </div>
-                </div>
-
-                {/* Bottom pink band */}
-                <div className="py-3 shrink-0 flex flex-col items-center"
-                  style={{ background: "linear-gradient(135deg, #e91e63, #f06292)" }}>
-                  <span className="text-white text-[9px] font-bold tracking-[0.25em] uppercase">✨ Sua viagem mágica começa aqui ✨</span>
-                </div>
-              </div>
+              <EbookCover />
 
               {/* Countdown floating badge */}
               <motion.div
@@ -230,7 +183,7 @@ export function HeroSection() {
                 animate={{ opacity: 1, scale: 1, x: 0 }}
                 transition={{ delay: 1.2, type: "spring", stiffness: 200 }}
                 className="absolute -right-8 -bottom-6 glass rounded-2xl p-4 shadow-2xl border border-pink-100/80 hidden md:block"
-                style={{ boxShadow: "0 12px 40px -8px rgba(233,30,99,0.2)" }}
+                style={{ boxShadow: "0 12px 40px -8px rgba(233,30,99,0.25)" }}
               >
                 <div className="flex items-center gap-3 mb-2.5">
                   <div className="bg-pink-100 p-2 rounded-full">
