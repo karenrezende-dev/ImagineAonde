@@ -37,7 +37,7 @@ export function BenefitsSection() {
             <div className="relative aspect-square max-w-md mx-auto">
               <div className="absolute inset-0 rounded-full blur-3xl transform -translate-x-6 translate-y-6 opacity-50" style={{ background: "linear-gradient(135deg, rgba(206,147,216,0.4), rgba(129,212,250,0.4))" }} />
               <img
-                src="https://images.unsplash.com/photo-1518002171953-a080ee817e1f?q=80&w=2070&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?q=80&w=2073&auto=format&fit=crop"
                 alt="Família feliz em viagem"
                 className="rounded-3xl object-cover w-full h-full shadow-2xl relative z-10"
               />
