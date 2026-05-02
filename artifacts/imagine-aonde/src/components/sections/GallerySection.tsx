@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
-import { Camera, Plus } from "lucide-react";
 
-const slots = [
-  { label: "Disney — Magic Kingdom", aspect: "square" },
-  { label: "Universal — Harry Potter", aspect: "tall" },
-  { label: "SeaWorld — com golfinhos", aspect: "square" },
-  { label: "Orlando — International Drive", aspect: "square" },
-  { label: "EPCOT — Mundo", aspect: "tall" },
-  { label: "Disney Springs — compras", aspect: "square" },
+const photos = [
+  { src: "/photos/castle-autor.jpg",   label: "Magic Kingdom 🏰",           aspect: "tall" },
+  { src: "/photos/universal-adventure.jpg", label: "Islands of Adventure 🎢", aspect: "square" },
+  { src: "/photos/castle-couple.jpg",  label: "Disney — Cinderella Castle ✨", aspect: "square" },
+  { src: "/photos/toy-story.jpg",      label: "Hollywood Studios — Toy Story 🎠", aspect: "tall" },
+  { src: "/photos/volcano-bay.jpg",    label: "Volcano Bay 🌊",              aspect: "square" },
+  { src: "/photos/goofy.jpg",          label: "Encontro com o Pateta 🐾",    aspect: "square" },
 ];
 
 export function GallerySection() {
@@ -26,40 +25,46 @@ export function GallerySection() {
             Momentos que eu vivi lá
           </h2>
           <p className="mt-4 text-gray-500 text-lg max-w-xl mx-auto">
-            Substitua estes espaços pelas suas fotos favoritas de Orlando — torne este guia ainda mais seu!
+            Fotos reais das minhas viagens — Disney, Universal e muito mais!
           </p>
         </motion.div>
 
-        {/* Masonry-style grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {slots.map((slot, i) => (
+          {photos.map((photo, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.07, duration: 0.45 }}
-              className={`photo-slot cursor-pointer ${slot.aspect === "tall" ? "row-span-2" : ""}`}
-              style={{
-                minHeight: slot.aspect === "tall" ? "320px" : "152px",
-              }}
+              className={`relative overflow-hidden rounded-2xl group cursor-pointer ${
+                photo.aspect === "tall" ? "row-span-2" : ""
+              }`}
+              style={{ minHeight: photo.aspect === "tall" ? "340px" : "160px" }}
             >
-              <div className="w-10 h-10 rounded-full flex items-center justify-center mb-1"
-                style={{ background: "rgba(167,139,250,0.15)" }}>
-                <Camera className="w-5 h-5 text-purple-400" />
+              <img
+                src={photo.src}
+                alt={photo.label}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                style={{ objectPosition: "center top" }}
+              />
+              {/* Overlay on hover */}
+              <div
+                className="absolute inset-0 flex items-end p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{ background: "linear-gradient(0deg, rgba(0,0,0,0.55) 0%, transparent 60%)" }}
+              >
+                <span className="text-white text-xs font-semibold drop-shadow">{photo.label}</span>
               </div>
-              <p className="text-xs font-semibold text-purple-500 text-center px-3">{slot.label}</p>
-              <div className="flex items-center gap-1 text-purple-300 mt-1">
-                <Plus className="w-3 h-3" />
-                <span className="text-[10px]">Adicionar foto</span>
+              {/* Always-visible subtle label badge */}
+              <div
+                className="absolute bottom-2 left-2 px-2.5 py-1 rounded-full text-[10px] font-semibold text-white"
+                style={{ background: "rgba(0,0,0,0.38)", backdropFilter: "blur(4px)" }}
+              >
+                {photo.label}
               </div>
             </motion.div>
           ))}
         </div>
-
-        <p className="text-center text-sm text-gray-400 mt-6">
-          💡 Dica: adicione suas próprias fotos aqui para personalizar seu guia
-        </p>
       </div>
     </section>
   );
