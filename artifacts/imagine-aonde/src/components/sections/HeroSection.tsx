@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
-import { EbookCover } from "@/components/EbookCover";
+import { DeviceMockups } from "@/components/DeviceMockups";
 
 export function HeroSection() {
   const [time, setTime] = useState({ h: 4, m: 0, s: 0 });
@@ -32,17 +32,24 @@ export function HeroSection() {
   const fmt = (n: number) => n.toString().padStart(2, "0");
 
   return (
-    <section className="relative overflow-hidden" style={{ background: "linear-gradient(165deg, #ffffff 0%, #FDF4FF 45%, #FFF0F8 100%)" }}>
+    <section
+      className="relative overflow-hidden"
+      style={{ background: "linear-gradient(165deg, #ffffff 0%, #FDF4FF 45%, #FFF0F8 100%)" }}
+    >
       {/* Soft blobs */}
-      <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-30 blur-3xl pointer-events-none"
-        style={{ background: "radial-gradient(circle, #E9D5FF, transparent)" }} />
-      <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full opacity-20 blur-3xl pointer-events-none"
-        style={{ background: "radial-gradient(circle, #BFDBFE, transparent)" }} />
+      <div
+        className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-30 blur-3xl pointer-events-none"
+        style={{ background: "radial-gradient(circle, #E9D5FF, transparent)" }}
+      />
+      <div
+        className="absolute bottom-0 left-0 w-80 h-80 rounded-full opacity-20 blur-3xl pointer-events-none"
+        style={{ background: "radial-gradient(circle, #BFDBFE, transparent)" }}
+      />
 
       <div className="container mx-auto px-4 md:px-8 py-16 md:py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
 
-          {/* Left */}
+          {/* Left — text */}
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
@@ -55,21 +62,39 @@ export function HeroSection() {
               <span className="text-sm font-medium text-purple-700">Guia para Brasileiros em Orlando</span>
             </div>
 
-            {/* Headline */}
-            <div className="space-y-3">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-[1.08] tracking-tight">
-                Descubra Orlando{" "}
-                <span className="block gradient-text-pink italic">como eu descobri</span>
+            {/* Headline with cursive */}
+            <div className="space-y-1">
+              <h1
+                className="font-bold leading-[1.1] tracking-tight"
+                style={{ fontSize: "clamp(2.4rem, 5vw, 3.5rem)", fontFamily: "'Poppins', sans-serif", color: "#1F1F1F" }}
+              >
+                Descubra Orlando
               </h1>
-              <p className="text-lg text-gray-500 leading-relaxed font-light max-w-md">
-                Um guia completo com tudo que você precisa saber para aproveitar ao máximo sua viagem — <strong className="text-purple-600 font-medium">Disney, Universal, SeaWorld e muito mais.</strong>
+              <p
+                style={{
+                  fontFamily: "'Great Vibes', cursive",
+                  fontSize: "clamp(2.6rem, 5.5vw, 4rem)",
+                  background: "linear-gradient(135deg, #EC4899 0%, #A855F7 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  lineHeight: 1.2,
+                }}
+              >
+                como eu descobri
+              </p>
+              <p className="text-lg text-gray-500 leading-relaxed font-light max-w-md pt-2">
+                Um guia completo com tudo que você precisa saber para aproveitar ao máximo sua viagem —{" "}
+                <strong className="text-purple-600 font-medium">Disney, Universal, SeaWorld e muito mais.</strong>
               </p>
             </div>
 
             {/* Countdown */}
             <div className="flex items-center gap-3 bg-white rounded-2xl px-5 py-3.5 w-fit border border-pink-100 shadow-sm">
               <div>
-                <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-0.5">Oferta especial expira em</p>
+                <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-0.5">
+                  Oferta especial expira em
+                </p>
                 <div className="flex items-center gap-1 font-mono font-bold text-xl text-gray-800">
                   <span>{fmt(time.h)}</span>
                   <span className="text-pink-400 animate-pulse-soft">:</span>
@@ -91,7 +116,7 @@ export function HeroSection() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })}
-                className="btn-primary text-base h-13 px-8 flex items-center justify-center gap-2"
+                className="btn-primary text-base px-8 flex items-center justify-center gap-2"
                 style={{ height: "52px" }}
               >
                 ✈️ Quero meu guia agora
@@ -99,7 +124,7 @@ export function HeroSection() {
               </motion.button>
               <button
                 onClick={() => document.getElementById("conteudo")?.scrollIntoView({ behavior: "smooth" })}
-                className="h-13 px-7 rounded-full border border-purple-200 text-purple-600 font-medium text-base hover:bg-purple-50 transition-all"
+                className="px-7 rounded-full border border-purple-200 text-purple-600 font-medium text-base hover:bg-purple-50 transition-all"
                 style={{ height: "52px" }}
               >
                 Ver o que está incluído
@@ -109,28 +134,28 @@ export function HeroSection() {
             {/* Stars */}
             <div className="flex items-center gap-2">
               <div className="flex gap-0.5">
-                {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                ))}
               </div>
-              <span className="text-sm text-gray-500">Mais de <strong className="text-gray-700">5.000</strong> viajantes felizes</span>
+              <span className="text-sm text-gray-500">
+                Mais de <strong className="text-gray-700">5.000</strong> viajantes felizes
+              </span>
             </div>
           </motion.div>
 
-          {/* Right: eBook */}
+          {/* Right — device mockups */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="flex justify-center lg:justify-end"
           >
-            <div className="relative">
-              {/* Glow */}
-              <div className="absolute inset-0 blur-3xl opacity-30 rounded-full scale-90"
-                style={{ background: "radial-gradient(circle, #DDD6FE 0%, #FBCFE8 60%, transparent 80%)" }} />
-              <div className="animate-float relative z-10 w-full max-w-[280px] lg:max-w-[320px]">
-                <EbookCover />
-              </div>
+            <div className="w-full max-w-[420px]">
+              <DeviceMockups />
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
