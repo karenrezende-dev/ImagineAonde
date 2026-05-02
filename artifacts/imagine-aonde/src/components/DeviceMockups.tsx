@@ -113,17 +113,6 @@ function LaptopMockup({ delay = 0 }) {
         {/* Screen */}
         <div className="w-full h-full rounded-[6px] overflow-hidden" style={{ background: "#000" }}>
           <img src={IMG} alt="Magic Kingdom" className="w-full h-full object-cover object-center" />
-          {/* Browser chrome */}
-          <div className="absolute top-7 left-8 right-8 h-4 rounded-full z-10 flex items-center px-2 gap-1"
-            style={{ background: "rgba(0,0,0,0.45)", backdropFilter: "blur(4px)" }}>
-            <div className="flex gap-1">
-              <div className="w-1.5 h-1.5 rounded-full bg-red-500 opacity-80" />
-              <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 opacity-80" />
-              <div className="w-1.5 h-1.5 rounded-full bg-green-500 opacity-80" />
-            </div>
-            <div className="flex-1 h-2 rounded-full mx-2"
-              style={{ background: "rgba(255,255,255,0.12)" }} />
-          </div>
           {/* Overlay title */}
           <div className="absolute inset-0 flex flex-col items-center justify-end pb-6 px-4"
             style={{ background: "linear-gradient(0deg, rgba(0,0,0,0.55) 0%, transparent 50%)" }}>
