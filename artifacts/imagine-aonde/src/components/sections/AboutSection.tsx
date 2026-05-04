@@ -3,7 +3,7 @@ import { Heart, MapPin } from "lucide-react";
 
 export function AboutSection() {
   return (
-    <section className="py-20 bg-white">
+    <section id="sobre" className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-8 max-w-5xl">
         <div className="grid md:grid-cols-2 gap-12 items-center">
 
@@ -74,7 +74,7 @@ export function AboutSection() {
                     backgroundClip: "text",
                   }}
                 >
-                  seu nome aqui
+                  Karen
                 </span>{" "}
                 👋
               </h2>
@@ -82,11 +82,15 @@ export function AboutSection() {
 
             <p className="text-gray-500 leading-relaxed">
               {/* ✏️ Substitua este texto pela sua história */}
-              Escreva aqui sobre você — como surgiu seu amor por Orlando, quantas vezes foi, o que te levou a criar este guia. Seja autêntica e conecte-se com quem vai ler!
+            Apaixonada por viagens e pelo universo Disney, encontrei em Orlando um lugar onde a magia realmente ganha vida e cada detalhe faz parte de uma experiência inesquecível.🏰✨
+
+Depois de muito planejamento, pesquisas e experiências vividas na prática, reuni neste guia tudo o que aprendi para ajudar outras pessoas a realizarem esse sonho de forma mais leve, organizada e sem complicação ✈️
             </p>
             <p className="text-gray-500 leading-relaxed">
               {/* ✏️ Continue aqui */}
-              Adicione mais um parágrafo contando sua missão: ajudar brasileiras a viver a melhor viagem possível a Orlando, sem desperdício de tempo ou dinheiro.
+              Aqui você vai encontrar dicas práticas, informações úteis e estratégias que fazem diferença de verdade na viagem, para aproveitar melhor seu tempo, economizar e viver Orlando da forma mais mágica possível 💫
+
+Porque eu acredito que, com planejamento e informação, sonhos podem sim sair do papel e virar memórias para a vida toda! 
             </p>
 
             <div className="grid grid-cols-2 gap-3 mt-2">
@@ -108,7 +112,7 @@ export function AboutSection() {
             </div>
 
             <p className="text-xs text-purple-300 italic mt-1">
-              ✏️ Personalize com seu nome, história e número de viagens
+             
             </p>
           </motion.div>
         </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, KeyboardEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
@@ -64,7 +64,17 @@ export function FAQSection() {
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
+                onKeyDown={(e: KeyboardEvent<HTMLButtonElement>) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setOpen(open === i ? null : i);
+                  }
+                }}
                 className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                aria-expanded={open === i}
+                aria-controls={`faq-answer-${i}`}
+                role="button"
+                tabIndex={0}
               >
                 <span className="font-medium text-gray-800 text-sm leading-snug">{faq.q}</span>
                 <motion.div
@@ -78,6 +88,7 @@ export function FAQSection() {
               <AnimatePresence>
                 {open === i && (
                   <motion.div
+                    id={`faq-answer-${i}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}

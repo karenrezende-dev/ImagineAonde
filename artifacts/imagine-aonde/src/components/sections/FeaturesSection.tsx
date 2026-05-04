@@ -68,7 +68,7 @@ export function FeaturesSection() {
             Tudo pensado para você
           </h2>
           <p className="mt-4 text-gray-500 text-lg max-w-xl mx-auto">
-            Não é só um PDF — é um guia vivo, com suporte real e acesso garantido por um ano.
+            Não é só um PDF, é um guia vivo, com suporte real e acesso garantido por um ano.
           </p>
         </motion.div>
 

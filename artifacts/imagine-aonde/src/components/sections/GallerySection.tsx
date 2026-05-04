@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { Lightbox } from "../Lightbox";
 
 const photos = [
   { src: "/photos/castle-autor.jpg",   label: "Magic Kingdom 🏰",           aspect: "tall" },
@@ -10,6 +12,14 @@ const photos = [
 ];
 
 export function GallerySection() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-8 max-w-6xl">
@@ -22,10 +32,10 @@ export function GallerySection() {
         >
           <span className="text-sm font-semibold text-pink-500 tracking-widest uppercase">Minhas fotos</span>
           <h2 className="mt-3 text-4xl md:text-5xl font-serif font-bold" style={{ color: "#1F1F1F" }}>
-            Momentos que eu vivi lá
+            Momentos que eu vivi lá... 
           </h2>
           <p className="mt-4 text-gray-500 text-lg max-w-xl mx-auto">
-            Fotos reais das minhas viagens — Disney, Universal e muito mais!
+          Você também pode viver tudo isso! 
           </p>
         </motion.div>
 
@@ -41,6 +51,16 @@ export function GallerySection() {
                 photo.aspect === "tall" ? "row-span-2" : ""
               }`}
               style={{ minHeight: photo.aspect === "tall" ? "340px" : "160px" }}
+              onClick={() => openLightbox(i)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  openLightbox(i);
+                }
+              }}
+              aria-label={`Abrir ${photo.label} em tamanho maior`}
             >
               <img
                 src={photo.src}
@@ -65,6 +85,14 @@ export function GallerySection() {
             </motion.div>
           ))}
         </div>
+
+        {/* Lightbox Modal */}
+        <Lightbox
+          images={photos}
+          initialIndex={lightboxIndex}
+          isOpen={lightboxOpen}
+          onClose={() => setLightboxOpen(false)}
+        />
       </div>
     </section>
   );

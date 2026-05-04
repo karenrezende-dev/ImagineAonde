@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
 import { DeviceMockups } from "@/components/DeviceMockups";
+import { GreetingComponent } from "@/components/GreetingComponent";
 
 export function HeroSection() {
   const [time, setTime] = useState({ h: 4, m: 0, s: 0 });
@@ -33,6 +34,7 @@ export function HeroSection() {
 
   return (
     <section
+      id="inicio"
       className="relative overflow-hidden"
       style={{ background: "linear-gradient(165deg, #ffffff 0%, #FDF4FF 45%, #FFF0F8 100%)" }}
     >
@@ -64,6 +66,7 @@ export function HeroSection() {
 
             {/* Headline with cursive */}
             <div className="space-y-1">
+              <GreetingComponent />
               <h1
                 className="font-bold leading-[1.1] tracking-tight"
                 style={{ fontSize: "clamp(2.4rem, 5vw, 3.5rem)", fontFamily: "'Poppins', sans-serif", color: "#1F1F1F" }}
