@@ -1,42 +1,17 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Star } from "lucide-react";
 import { DeviceMockups } from "@/components/DeviceMockups";
 import { GreetingComponent } from "@/components/GreetingComponent";
 
 export function HeroSection() {
-  const [time, setTime] = useState({ h: 4, m: 0, s: 0 });
-
-  useEffect(() => {
-    const key = "urgency_end";
-    const stored = localStorage.getItem(key);
-    let end: number;
-    if (stored) {
-      end = parseInt(stored, 10);
-    } else {
-      end = Date.now() + 4 * 60 * 60 * 1000;
-      localStorage.setItem(key, String(end));
-    }
-    const tick = () => {
-      const diff = Math.max(0, end - Date.now());
-      setTime({
-        h: Math.floor(diff / 3600000),
-        m: Math.floor((diff % 3600000) / 60000),
-        s: Math.floor((diff % 60000) / 1000),
-      });
-    };
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
-
-  const fmt = (n: number) => n.toString().padStart(2, "0");
 
   return (
     <section
       id="inicio"
-      className="relative overflow-hidden"
-      style={{ background: "linear-gradient(165deg, #ffffff 0%, #FDF4FF 45%, #FFF0F8 100%)" }}
+      className="relative overflow-hidden scroll-mt-[70px]"
+      style={{ 
+        paddingTop: "clamp(70px, 10vw, 80px)",
+        background: "linear-gradient(165deg, #ffffff 0%, #FDF4FF 45%, #FFF0F8 100%)" 
+      }}
     >
       {/* Soft blobs */}
       <div
@@ -77,41 +52,19 @@ export function HeroSection() {
                 style={{
                   fontFamily: "'Great Vibes', cursive",
                   fontSize: "clamp(2.6rem, 5.5vw, 4rem)",
-                  background: "linear-gradient(135deg, #EC4899 0%, #A855F7 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
+                  color: "#7C3AED",
                   lineHeight: 1.2,
                 }}
               >
                 como eu descobri
               </p>
               <p className="text-lg text-gray-500 leading-relaxed font-light max-w-md pt-2">
-                Um guia completo com tudo que você precisa saber para aproveitar ao máximo sua viagem —{" "}
+                Um guia completo com tudo que você precisa saber para aproveitar ao máximo sua viagem {" "}
                 <strong className="text-purple-600 font-medium">Disney, Universal, SeaWorld e muito mais.</strong>
               </p>
             </div>
 
-            {/* Countdown */}
-            <div className="flex items-center gap-3 bg-white rounded-2xl px-5 py-3.5 w-fit border border-pink-100 shadow-sm">
-              <div>
-                <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-0.5">
-                  Oferta especial expira em
-                </p>
-                <div className="flex items-center gap-1 font-mono font-bold text-xl text-gray-800">
-                  <span>{fmt(time.h)}</span>
-                  <span className="text-pink-400 animate-pulse-soft">:</span>
-                  <span>{fmt(time.m)}</span>
-                  <span className="text-pink-400 animate-pulse-soft">:</span>
-                  <span>{fmt(time.s)}</span>
-                </div>
-              </div>
-              <div className="h-10 w-px bg-pink-100" />
-              <div>
-                <p className="text-xs text-gray-400 line-through">R$ 97,00</p>
-                <p className="text-xl font-bold" style={{ color: "#EC4899" }}>R$ 29,90</p>
-              </div>
-            </div>
+            
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3">
@@ -120,31 +73,20 @@ export function HeroSection() {
                 whileTap={{ scale: 0.98 }}
                 onClick={() => document.getElementById("comprar")?.scrollIntoView({ behavior: "smooth" })}
                 className="btn-primary text-base px-8 flex items-center justify-center gap-2"
-                style={{ height: "52px" }}
+                style={{ height: "52px", background: "linear-gradient(135deg, #7C3AED 0%, #A855F7 100%)" }}
               >
-                ✈️ Quero meu guia agora
-                <ArrowRight className="w-4 h-4" />
+                📖 Ver as dicas do guia
               </motion.button>
               <button
-                onClick={() => document.getElementById("conteudo")?.scrollIntoView({ behavior: "smooth" })}
-                className="px-7 rounded-full border border-purple-200 text-purple-600 font-medium text-base hover:bg-purple-50 transition-all"
+                onClick={() => document.getElementById("sobre")?.scrollIntoView({ behavior: "smooth" })}
+                className="px-7 rounded-full border border-purple-200 text-purple-600 font-medium text-base hover:bg-purple-50 transition-all bg-white"
                 style={{ height: "52px" }}
               >
-                Ver o que está incluído
+                Quem criou o guia
               </button>
             </div>
 
-            {/* Stars */}
-            <div className="flex items-center gap-2">
-              <div className="flex gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <span className="text-sm text-gray-500">
-                Mais de <strong className="text-gray-700">5.000</strong> viajantes felizes
-              </span>
-            </div>
+            
           </motion.div>
 
           {/* Right — device mockups */}

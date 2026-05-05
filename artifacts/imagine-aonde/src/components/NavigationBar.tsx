@@ -7,9 +7,9 @@ import { Menu, X } from "lucide-react";
 const navItems = [
   { label: "Início", href: "#inicio" },
   { label: "Sobre", href: "#sobre" },
-  { label: "O Guia", href: "#conteudo" },
+  { label: "Dicas", href: "#conteudo" },
   { label: "FAQ", href: "#faq" },
-  { label: "Comprar Agora", href: "#comprar", cta: true },
+  { label: "Fale Conosco", href: "#contato", cta: true },
 ];
 
 function NavLink({
@@ -28,7 +28,7 @@ function NavLink({
         onClick={onClick}
         className="rounded-full text-white px-5 py-2 text-sm font-medium transition-transform hover:scale-105"
         style={{
-          background: "linear-gradient(135deg, #EC4899 0%, #A855F7 100%)",
+          background: "linear-gradient(135deg, #7C3AED 0%, #A855F7 100%)",
         }}
       >
         {item.label}
@@ -64,7 +64,7 @@ export function NavigationBar() {
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 100);
 
-    const sections = ["inicio", "sobre", "conteudo", "faq", "comprar"];
+    const sections = ["inicio", "sobre", "conteudo", "faq", "contato"];
     for (const sectionId of sections) {
       const element = document.getElementById(sectionId);
       if (element) {
@@ -116,7 +116,7 @@ export function NavigationBar() {
               style={{
                 fontFamily: "'Great Vibes', cursive",
                 fontSize: "1.5rem",
-                background: "linear-gradient(135deg, #EC4899 0%, #A855F7 100%)",
+                background: "linear-gradient(135deg, #7C3AED 0%, #A855F7 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",

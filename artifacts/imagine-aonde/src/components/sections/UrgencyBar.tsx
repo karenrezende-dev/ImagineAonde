@@ -47,7 +47,7 @@ export function UrgencyBar() {
         className="bg-white font-bold text-xs px-3 py-1 rounded-full hover:bg-purple-50 transition-all shrink-0"
         style={{ color: "#A855F7" }}
       >
-        R$ 29,90 — Garantir ✈️
+        R$ 39,90 — Garantir
       </button>
       <button onClick={() => setVisible(false)} className="absolute right-3 text-white/70 hover:text-white transition-colors">
         <X className="w-3.5 h-3.5" />

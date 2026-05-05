@@ -361,7 +361,7 @@ export function BookPreviewSection() {
               className="btn-shimmer inline-flex items-center gap-2 font-bold text-lg h-14 px-10 rounded-full text-white shadow-xl animate-pulse-glow"
               style={{ background: "linear-gradient(135deg, #e91e63 0%, #9c27b0 100%)" }}
             >
-              ✈️ Quero o Guia Completo — R$ 29,90
+              ✈️ Quero o Guia Completo — R$ 39,90
             </motion.button>
             <p className="text-xs text-[#2D2D2D]/35 mt-3">Garantia de 7 dias • Acesso imediato • Risco zero</p>
           </motion.div>

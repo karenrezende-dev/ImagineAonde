@@ -1,36 +1,41 @@
 import { HeroSection } from "@/components/sections/HeroSection";
-import { CoverageSection } from "@/components/sections/CoverageSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
 import { GallerySection } from "@/components/sections/GallerySection";
+import { WhatsInsideSection } from "@/components/sections/WhatsInsideSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 import { OfferSection } from "@/components/sections/OfferSection";
+import { PurchaseSection } from "@/components/sections/PurchaseSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { WhatsAppButton } from "@/components/sections/WhatsAppButton";
-import { StickyCTA } from "@/components/sections/StickyCTA";
-import { UrgencyBar } from "@/components/sections/UrgencyBar";
 import { NavigationBar } from "@/components/NavigationBar";
 import { ScrollProgress } from "@/components/ScrollProgress";
 
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-white font-sans" style={{ color: "#1F1F1F" }}>
-      <UrgencyBar />
       <NavigationBar />
       <ScrollProgress />
-      <div className="pt-[38px]">
+      <div>
         <HeroSection />
-        <CoverageSection />
+        <WhatsInsideSection />
         <AboutSection />
         <FeaturesSection />
         <GallerySection />
+        <ContactSection />
         <OfferSection />
+        <PurchaseSection />
         <FAQSection />
-        <footer className="py-8 text-center text-sm text-gray-400 border-t border-gray-100">
-          <p>© 2025 Imagine Aonde · Todos os direitos reservados</p>
-          <p className="mt-1">Guia Digital · Acesso imediato após a compra</p>
+        <footer className="py-12 bg-gray-900 text-center">
+          <div className="container mx-auto px-4">
+            <p className="text-white font-bold text-lg mb-2">Imagine Aonde</p>
+            <p className="text-gray-400 text-sm mb-4">Guia completo para brasileiros em Orlando</p>
+            <p className="text-gray-500 text-xs">
+              © 2025 Imagine Aonde · Este site não é afiliado à Disney ou Universal
+            </p>
+          </div>
         </footer>
         <WhatsAppButton />
-        <StickyCTA />
       </div>
     </div>
   );

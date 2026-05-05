@@ -25,7 +25,7 @@ export function StickyCTA() {
               <p className="text-xs text-gray-500">Guia completo de Orlando</p>
               <div className="flex items-center gap-1.5">
                 <span className="text-xs text-gray-400 line-through">R$ 97,00</span>
-                <span className="font-bold text-pink-600 text-lg">R$ 29,90</span>
+                <span className="font-bold text-pink-600 text-lg">R$ 39,90</span>
               </div>
             </div>
             <button

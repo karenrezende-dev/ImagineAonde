@@ -37,7 +37,7 @@ const parks = [
 
 export function CoverageSection() {
   return (
-    <section id="conteudo" className="py-20 section-soft">
+    <section id="conteudo" className="py-20 section-soft scroll-mt-[70px]">
       <div className="container mx-auto px-4 md:px-8 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

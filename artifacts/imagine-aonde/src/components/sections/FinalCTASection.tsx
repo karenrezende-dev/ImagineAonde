@@ -98,8 +98,8 @@ export function FinalCTASection() {
           {/* Price callout */}
           <div className="mt-8 inline-flex items-center gap-3 glass-dark border border-white/15 rounded-2xl px-6 py-3">
             <span className="text-white/50 line-through text-sm">R$ 97,00</span>
-            <span className="text-yellow-300 font-serif font-bold text-2xl">R$ 29,90</span>
-            <span className="bg-yellow-300/20 text-yellow-200 text-xs font-bold px-2 py-0.5 rounded-full">70% OFF</span>
+            <span className="text-yellow-300 font-serif font-bold text-2xl">R$ 39,90</span>
+            <span className="bg-yellow-300/20 text-yellow-200 text-xs font-bold px-2 py-0.5 rounded-full">59% OFF</span>
           </div>
         </motion.div>
       </div>
